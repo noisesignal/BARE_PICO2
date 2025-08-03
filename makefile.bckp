@@ -1,0 +1,48 @@
+#CFLAGS += -DCFG_TUSB_MCU=OPT_MCU_RP2040 -DUSB_NUM_ENDPOINTS=16 -DUSB_MAX_ENDPOINTS=USB_NUM_ENDPOINTS
+#CFLAGS += -DUSB_BUF_CTRL_STALL=0x00000800u -DUSB_EP_STALL_ARM_EP0_OUT_BITS=0x00000002 -DUSB_EP_STALL_ARM_EP0_IN_BITS=0x00000001
+#CFLAGS += -DUSB_INTS_DEV_SOF_BITS=0x00020000 -DUSB_SIE_CTRL_PULLUP_EN_BITS=0x00010000 -DUSB_SIE_CTRL_RESUME_BITS=0x00001000
+#CFLAGS += -DUSBCTRL_IRQ=14 -DRESETS_RESET_USBCTRL_BITS=0x10000000 -DUSB_INTS_DEV_CONN_DIS_BITS=0x00002000
+#CFLAGS += -DUSB_INTS_DEV_RESUME_FROM_HOST_BITS=0x00008000 -DUSB_INTS_DEV_SUSPEND_BITS=0x00004000
+#CFLAGS += -DUSB_INTS_SETUP_REQ_BITS=0x00010000 -DUSB_INTS_BUS_RESET_BITS=0x00001000 -DUSB_INTS_BUFF_STATUS_BITS=0x00000010
+#CFLAGS += -DUSB_SIE_CTRL_EP0_INT_1BUF_BITS=0x20000000 -DUSB_MAIN_CTRL_CONTROLLER_EN_BITS=0x00000001
+#CFLAGS += -DUSB_USB_PWR_VBUS_DETECT_OVERRIDE_EN_BITS=0x00000008 -DUSB_USB_PWR_VBUS_DETECT_BITS=0x00000004
+#CFLAGS += -DUSB_SIE_STATUS_RESUME_BITS=0x00000800 -DUSB_SIE_STATUS_SUSPENDED_BITS=0x00000010
+#CFLAGS += -DUSB_SIE_STATUS_BUS_RESET_BITS=0x00080000 -DUSB_SIE_STATUS_SETUP_REC_BITS=0x00020000
+#CFLAGS += -DUSB_INTF_DEV_SOF_BITS=0x00020000 -DUSB_SOF_RD_BITS=0x000007ff -DUSB_BUF_CTRL_DATA1_PID=0x00002000u
+#CFLAGS += -DUSB_BUF_CTRL_SEL=0x00001000u -DEP_CTRL_BUFFER_TYPE_LSB=26u
+#INCLUDES += -Itinyusb/src/include
+#INCLUDES += -Itinyusb/src/common
+#INCLUDES += -Itinyusb/src/class/cdc
+#INCLUDES += -Itinyusb/src/portable/raspberrypi/rp2040
+#INCLUDES += -Itinyusb/src
+
+#INCLUDES += -Itinyusb/hw
+#INCLUDES += -Itinyusb/hw/bsp
+#INCLUDES += -Itinyusb/src/device
+
+#include /home/paul/BARE_PICO2/tinyusb/src/tinyusb.mk
+
+#C_SRCS += $(wildcard tinyusb/src/*.c)
+#C_SRCS += $(wildcard tinyusb/src/device/*.c)
+#C_SRCS += $(wildcard tinyusb/src/common/*.c)
+#C_SRCS += $(wildcard tinyusb/src/class/cdc/*.c)
+#C_SRCS += $(wildcard tinyusb/src/portable/raspberrypi/rp2040/*.c)
+
+#C_OBJS += $(TINYUSB_SRC_C:.c=.o)
+
+#	rm -r tinyusb/src/*.o
+#	rm -f tinyusb/src/device/*.o
+#	rm -f tinyusb/src/common/*.o
+#	rm -f tinyusb/src/class/cdc/*.o
+#	rm -f tinyusb/src/portable/raspberrypi/rp2040/*.o
+#	rm -f tinyusb/src/typec/*.o
+#	rm -f tinyusb/src/host/*.o
+#	rm -f tinyusb/src/class/dfu/*.o
+#	rm -f tinyusb/src/class/video/*.o
+#	rm -f tinyusb/src/class/hid/*.o
+#	rm -f tinyusb/src/class/msc/*.o
+#	rm -f tinyusb/src/class/midi/*.o
+#	rm -f tinyusb/src/class/vendor/*.o
+#	rm -f tinyusb/src/class/usbtmc/*.o
+#	rm -f tinyusb/src/class/net/*.o
+#	rm -f tinyusb/src/class/audio/*.o
